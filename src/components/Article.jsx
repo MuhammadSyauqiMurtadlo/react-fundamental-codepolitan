@@ -1,17 +1,9 @@
-function Article() {
-  const name = "Syauqi Murtadlo";
-  const titles = [
-    "Article Pertama",
-    "Article Kedua",
-    "Article Ketiga",
-    "Article Keempat",
-  ];
-
+function Article(props) {
   return (
     <>
-      <div>{name}</div>
+      <div>{props.name}</div>
       <div>
-        {titles.map((title) => (
+        {props.titles.map((title) => (
           <div>{title}</div>
         ))}
       </div>

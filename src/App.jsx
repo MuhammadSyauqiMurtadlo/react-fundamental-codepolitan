@@ -5,12 +5,10 @@ function App() {
   return (
     <>
       <div className="App">
-        <Article />
+        <Article name="Syauqi" titles={["React js", "Vue js"]} />
+        <br />
+        <Article name="Murtadlo" titles={["Angular", "Svelte"]} />
       </div>
-      <section id="next-steps">
-        <div className="ticks"></div>
-        <section id="spacer"></section>
-      </section>
     </>
   );
 }
