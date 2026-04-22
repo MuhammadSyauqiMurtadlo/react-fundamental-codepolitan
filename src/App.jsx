@@ -4,8 +4,9 @@ import Article from "./components/Article";
 function App() {
   return (
     <>
-      <div className="App"></div>
-
+      <div className="App">
+        <Article />
+      </div>
       <section id="next-steps">
         <div className="ticks"></div>
         <section id="spacer"></section>

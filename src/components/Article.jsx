@@ -1,6 +1,11 @@
 function Article() {
   const name = "Syauqi Murtadlo";
-  const titles = ["Article Pertama", "Article Kedua", "Article Ketiga"];
+  const titles = [
+    "Article Pertama",
+    "Article Kedua",
+    "Article Ketiga",
+    "Article Keempat",
+  ];
 
   return (
     <>
