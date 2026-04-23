@@ -1,13 +1,11 @@
 import "./App.css";
-import Article from "./components/Article";
+import Homepage from "./pages/Index";
 
 function App() {
   return (
     <>
       <div className="App">
-        <Article name="Syauqi" titles={["React js", "Vue js"]} />
-        <br />
-        <Article name="Murtadlo" titles={["Angular", "Svelte"]} />
+        <Homepage />
       </div>
     </>
   );
