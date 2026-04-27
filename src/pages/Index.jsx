@@ -1,23 +1,23 @@
 import { useState } from "react";
-import posts from "../posts.json";
+import postsData from "../posts.json";
 import Article from "../components/Article";
+import Search from "../components/Search";
 
 function Homepage() {
-  const [search, setSearch] = useState("");
-  const changeSearch = (event) => {
-    console.log(event.target.value);
-    setSearch(event.target.value);
+  const [posts, setPosts] = useState(postsData);
+
+  const handleSearch = (value) => {
+    const filteredPosts = postsData.filter((item) =>
+      item.title.toLowerCase().includes(value.toLowerCase()),
+    );
+    setPosts(filteredPosts);
   };
   return (
     <>
       <h1>Welcome to the Homepage</h1>
-      <div>
-        Cari Artikel:{" "}
-        <input type="text" placeholder="Search..." onChange={changeSearch} />
-      </div>
-      <small>Ditemukan 0 data dengan pencarian kata "{search}"</small>
-      {posts.map(({ title, date, tags }, index) => (
-        <Article {...{ title, date, tags }} key={index} />
+      <Search onSearch={handleSearch} />
+      {posts.map((props, index) => (
+        <Article {...props} key={index} />
       ))}
     </>
   );
