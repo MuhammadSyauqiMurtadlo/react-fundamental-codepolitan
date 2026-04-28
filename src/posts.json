@@ -2,16 +2,19 @@
   {
     "title": "Belajar React JS untuk Pemula",
     "tags": ["React", "JavaScript", "Frontend"],
-    "date": "2024-05-01"
+    "date": "2024-05-01",
+    "isNew": true
   },
   {
     "title": "Belajar Vue JS untuk Pemula",
     "tags": ["Vue", "JavaScript", "Frontend"],
-    "date": "2024-06-01"
+    "date": "2024-06-01",
+    "isNew": false
   },
   {
     "title": "Belajar Svelte untuk Pemula",
     "tags": ["Svelte", "JavaScript", "Frontend"],
-    "date": "2024-05-01"
+    "date": "2024-05-01",
+    "isNew": false
   }
 ]
