@@ -5,17 +5,19 @@ import Search from "../components/Search";
 
 function Homepage() {
   const [posts, setPosts] = useState(postsData);
+  const [resultCount, setResultCount] = useState(postsData.length);
 
   const handleSearch = (value) => {
     const filteredPosts = postsData.filter((item) =>
       item.title.toLowerCase().includes(value.toLowerCase()),
     );
     setPosts(filteredPosts);
+    setResultCount(filteredPosts.length);
   };
   return (
     <>
       <h1>Welcome to the Homepage</h1>
-      <Search onSearch={handleSearch} />
+      <Search onSearch={handleSearch} resultCount={resultCount} />
       {posts.map((props, index) => (
         <Article {...props} key={index} />
       ))}

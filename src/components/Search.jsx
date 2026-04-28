@@ -13,7 +13,9 @@ function Search(props) {
         Cari Artikel:{" "}
         <input type="text" placeholder="Search..." onChange={changeSearch} />
       </div>
-      <small>Ditemukan 0 data dengan pencarian kata "{search}"</small>
+      <small>
+        Ditemukan {props.resultCount} data dengan pencarian kata "{search}"
+      </small>
     </>
   );
 }
