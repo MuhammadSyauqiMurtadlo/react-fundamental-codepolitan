@@ -25,6 +25,14 @@ function Homepage() {
       });
   }, []);
 
+  useEffect(() => {
+    console.log("Posts updated:", posts);
+  }, [posts]);
+
+  useEffect(() => {
+    console.log("External posts updated:", externalPost);
+  }, [externalPost]);
+
   return (
     <>
       <h1>Welcome to the Homepage</h1>
