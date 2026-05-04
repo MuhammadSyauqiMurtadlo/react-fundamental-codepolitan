@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import postsData from "../posts.json";
 import Article from "../components/Article";
 import Search from "../components/Search";
@@ -14,6 +14,15 @@ function Homepage() {
     setPosts(filteredPosts);
     setResultCount(filteredPosts.length);
   };
+
+  useEffect(() => {
+    console.log("Homepage component mounted");
+
+    return () => {
+      console.log("Cleanup");
+    };
+  }, [posts]);
+
   return (
     <>
       <h1>Welcome to the Homepage</h1>
