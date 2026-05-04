@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import postsData from "../posts.json";
 import Article from "../components/Article";
 import Search from "../components/Search";
+// import js from "@eslint/js";
 
 function Homepage() {
   const [posts, setPosts] = useState(postsData);
   const [resultCount, setResultCount] = useState(postsData.length);
+  const [externalPost, setExternalPost] = useState([]);
 
   const handleSearch = (value) => {
     const filteredPosts = postsData.filter((item) =>
@@ -16,12 +18,12 @@ function Homepage() {
   };
 
   useEffect(() => {
-    console.log("Homepage component mounted");
-
-    return () => {
-      console.log("Cleanup");
-    };
-  }, [posts]);
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((json) => {
+        setExternalPost(json);
+      });
+  }, []);
 
   return (
     <>
@@ -29,6 +31,11 @@ function Homepage() {
       <Search onSearch={handleSearch} resultCount={resultCount} />
       {posts.map((props, index) => (
         <Article {...props} key={index} />
+      ))}
+      <hr />
+      <h2>External Posts</h2>
+      {externalPost.map((item, index) => (
+        <div key={index}> - {item.title}</div>
       ))}
     </>
   );
