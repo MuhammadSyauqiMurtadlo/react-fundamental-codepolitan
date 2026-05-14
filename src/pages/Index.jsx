@@ -7,7 +7,7 @@ import Search from "../components/Search";
 function Homepage() {
   const [posts, setPosts] = useState(postsData);
   const [resultCount, setResultCount] = useState(postsData.length);
-  const [externalPost, setExternalPost] = useState([]);
+  // const [externalPost, setExternalPost] = useState([]);
 
   const handleSearch = (value) => {
     const filteredPosts = postsData.filter((item) =>
@@ -25,25 +25,12 @@ function Homepage() {
       });
   }, []);
 
-  useEffect(() => {
-    console.log("Posts updated:", posts);
-  }, [posts]);
-
-  useEffect(() => {
-    console.log("External posts updated:", externalPost);
-  }, [externalPost]);
-
   return (
     <>
       <h1>Welcome to the Homepage</h1>
       <Search onSearch={handleSearch} resultCount={resultCount} />
       {posts.map((props, index) => (
         <Article {...props} key={index} />
-      ))}
-      <hr />
-      <h2>External Posts</h2>
-      {externalPost.map((item, index) => (
-        <div key={index}> - {item.title}</div>
       ))}
     </>
   );
